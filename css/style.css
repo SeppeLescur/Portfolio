@@ -35,7 +35,7 @@ body {
 }
 body > header, body > footer {
   background-color: var(--color2);
-  min-height: 100px;
+  min-height: 150px;
   padding: 10px;
   display: flex;
   flex-flow: row wrap;
@@ -44,9 +44,9 @@ body > header, body > footer {
 }
 body main {
   gap: 0px;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 300px);
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 4fr;
 }
 body main > .left {
   width: 100%;
@@ -56,13 +56,14 @@ body main > .left {
      object-fit: cover;
 }
 body main > .content {
+  padding-left: 10px;
   border-left: 10px solid var(--color4);
-  height: calc(100vh - 200px);
+  height: calc(100vh - 300px);
   overflow-x: hidden;
   scroll-behavior: smooth;
   display: flex;
   flex-flow: row;
-  grid-column: 2/4;
+  grid-column: 2/3;
 }
 body main > .content > .previous, body main > .content > .next {
   position: absolute;
@@ -79,11 +80,16 @@ body main > .content > .next {
 }
 body main > .content > section {
   padding-left: 10px;
-  min-width: calc(75vw - 5px);
+  min-width: calc(80vw - 5px);
   border-right: 10px solid var(--color4);
 }
 body main > .content > section .title {
+  height: 100%;
   font-size: 5rem;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
 }
 body > header {
   border-bottom: 5px solid var(--accent-color2);
