@@ -1,7 +1,7 @@
 function scrollTo(hash) {
     location.hash = "#" + hash;
 }
-
+// CONTENT NAV BUTTONS
 let index = 1;
 function next() {
     index += 1;

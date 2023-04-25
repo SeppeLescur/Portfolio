@@ -16,6 +16,7 @@
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  font-family: "Bruno Ace SC", cursive;
 }
 
 a {
@@ -59,7 +60,7 @@ body main > .content {
   padding-left: 10px;
   border-left: 10px solid var(--color4);
   height: calc(100vh - 300px);
-  overflow-x: hidden;
+  overflow: hidden;
   scroll-behavior: smooth;
   display: flex;
   flex-flow: row;
@@ -74,6 +75,7 @@ body main > .content > .previous, body main > .content > .next {
   text-align: center;
   padding-top: 10px;
   border-radius: 40%;
+  z-index: 10;
 }
 body main > .content > .next {
   right: 15px;
@@ -82,6 +84,12 @@ body main > .content > section {
   padding-left: 10px;
   min-width: calc(80vw - 5px);
   border-right: 10px solid var(--color4);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+  background-position: 50% 100%;
+  filter: drop-shadow(0 0 10px black);
+  filter: contrast(70%);
 }
 body main > .content > section .title {
   height: 100%;
