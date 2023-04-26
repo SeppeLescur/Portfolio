@@ -71,11 +71,18 @@ body main > .content > .previous, body main > .content > .next {
   width: 40px;
   height: 40px;
   top: 50%;
-  background-color: var(--color4);
   text-align: center;
-  padding-top: 10px;
-  border-radius: 40%;
+  padding: 7px;
   z-index: 10;
+  background-color: var(--color4);
+  border: 2px solid var(--accent-color1);
+  box-shadow: inset 0px -4px 0px var(--accent-color2);
+  text-shadow: none;
+  border-radius: 10px;
+}
+body main > .content > .previous:hover, body main > .content > .next:hover {
+  background-color: var(--color2);
+  box-shadow: none;
 }
 body main > .content > .next {
   right: 15px;
@@ -99,8 +106,32 @@ body main > .content > section .title {
   flex-flow: column;
   justify-content: space-around;
 }
+body main > .content > section .form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row;
+}
+body main > .content > section .form > form {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 500px;
+}
+body main > .content > section .form > form label {
+  display: flex;
+  justify-content: space-between;
+}
+body main > .content > section .form > form button {
+  align-self: center;
+}
 body > header {
   border-bottom: 5px solid var(--accent-color2);
+}
+body > header > div {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 body > header > div > a {
   background-color: inherit;
@@ -113,9 +144,9 @@ body > header #logo {
 }
 body > header > nav {
   width: 100%;
+  display: flex;
+  justify-content: center;
   padding: 10px;
-  border: 2px solid var(--accent-color1);
-  border-radius: 10px;
 }
 body > header > nav a {
   color: inherit;
@@ -125,6 +156,7 @@ body > header > nav a {
   box-shadow: inset 0px -4px 0px var(--accent-color2);
   border-radius: 10px;
   text-decoration: none;
+  text-shadow: none;
   font-weight: bold;
 }
 body > header > nav a:hover {
