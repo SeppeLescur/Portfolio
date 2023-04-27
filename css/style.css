@@ -39,6 +39,7 @@ body {
   gap: 0px;
 }
 body > header, body > footer {
+  font-size: clamp(0.5em, 3vw, 2em);
   background-color: var(--color2);
   min-height: 150px;
   padding: 10px;
@@ -102,20 +103,22 @@ body main > .content > section {
   filter: drop-shadow(0 0 10px black);
   filter: contrast(70%);
 }
-body main > .content > section .title {
-  height: 100%;
-  font-size: 4em;
-  text-align: center;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
-}
-body main > .content > section .form {
+body main > .content > section > div {
   width: 100%;
   height: 100%;
   display: flex;
+  font-size: clamp(0.9rem, 5vw, 3em);
+  padding-right: 20px;
+}
+body main > .content > section .title {
+  justify-content: space-around;
+  font-size: 4em;
+  text-align: center;
+  flex-flow: column;
+}
+body main > .content > section .form {
   justify-content: center;
-  flex-flow: row;
+  text-align: center;
 }
 body main > .content > section .form > form {
   display: flex;
@@ -128,6 +131,11 @@ body main > .content > section .form > form label {
 }
 body main > .content > section .form > form button {
   align-self: center;
+}
+body main > .content > section .socials {
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
 }
 body > header {
   border-bottom: 5px solid var(--accent-color2);
@@ -184,7 +192,7 @@ body > footer {
 
 @media only screen and (max-width: 500px) {
   main > .content > section {
-    font-size: clamp(0.5em, 2vw, 2em);
+    font-size: clamp(0.5em, 3vw, 2em);
   }
   .left {
     display: none;
