@@ -28,6 +28,14 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
+.icon {
+  filter: drop-shadow(3px 3px 4px black);
+}
+
 body {
   color: white;
   text-shadow: 3px 3px 4px black;
@@ -39,12 +47,12 @@ body {
   gap: 0px;
 }
 body > header, body > footer {
-  font-size: clamp(0.5em, 3vw, 2em);
+  font-size: clamp(0.2em, 4vw, 2em);
   background-color: var(--color2);
   min-height: 150px;
+  max-height: 175px;
   padding: 10px;
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
   box-shadow: 0px 0px 10px rgb(60, 0, 0);
 }
@@ -92,6 +100,9 @@ body main > .content > .previous:hover, body main > .content > .next:hover {
 body main > .content > .next {
   right: 15px;
 }
+body main > .content .titlesection {
+  background-position: 50% 100%;
+}
 body main > .content > section {
   padding-left: 10px;
   min-width: calc(80vw - 5px);
@@ -99,20 +110,82 @@ body main > .content > section {
   background-size: contain;
   background-repeat: no-repeat;
   background-size: auto 50%;
-  background-position: 50% 100%;
+  background-position: 50% 50%;
   filter: drop-shadow(0 0 10px black);
   filter: contrast(70%);
 }
-body main > .content > section > div {
+body main > .content > section div {
   width: 100%;
   height: 100%;
   display: flex;
-  font-size: clamp(0.9rem, 5vw, 3em);
+  font-size: clamp(0.5rem, 5vw, 3em);
   padding-right: 20px;
+  max-height: calc(100vh - 350px);
 }
 body main > .content > section .title {
   justify-content: space-around;
   font-size: 4em;
+  text-align: center;
+  flex-flow: column;
+}
+body main > .content > section .galery {
+  filter: contrast(142%);
+  flex-flow: column;
+  align-items: center;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+body main > .content > section .galery .item {
+  font-size: clamp(0.5rem, 2vw, 2rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 2px solid var(--accent-color3);
+  padding-bottom: 10px;
+}
+body main > .content > section .galery .item .name {
+  border-bottom: 2px solid var(--accent-color3);
+  grid-row: 1/2;
+}
+body main > .content > section .galery .item .description {
+  grid-column: 2;
+  grid-row: 2/3;
+}
+body main > .content > section .galery .item img {
+  grid-column: 1;
+  grid-row: 1/3;
+  width: 50%;
+  justify-self: center;
+  align-items: center;
+}
+body main > .content > section .galery .item img:hover {
+  transform: scale(2);
+}
+body main > .content > section .galery .item .noscale {
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  border-radius: 5px;
+}
+body main > .content > section .galery .item .noscale:hover {
+  transform: scale(1);
+}
+body main > .content > section .galery::-webkit-scrollbar {
+  display: none;
+}
+body main > .content > section .skills {
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+}
+body main > .content > section .skills > article {
+  width: 40%;
+  text-align: center;
+}
+body main > .content > section .project {
+  justify-content: space-between;
+  font-size: 3em;
   text-align: center;
   flex-flow: column;
 }
@@ -138,19 +211,27 @@ body main > .content > section .socials {
   text-align: center;
 }
 body > header {
+  flex-flow: column nowrap;
   border-bottom: 5px solid var(--accent-color2);
 }
-body > header > div {
+body > header > #top {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-left: 10px;
+  text-align: end;
+}
+body > header > #top > div {
   display: flex;
   flex-flow: column;
   justify-content: center;
 }
-body > header > div > a {
+body > header > #top > div > a {
   background-color: inherit;
   border: none;
   box-shadow: none;
 }
-body > header #logo {
+body > header > #top #logo {
   max-height: 80px;
   border-radius: 5px;
 }
@@ -183,6 +264,7 @@ body > header > nav > ul > li {
   list-style: none;
 }
 body > footer {
+  flex-flow: row nowrap;
   position: absolute;
   bottom: 0px;
   width: 100%;
@@ -190,10 +272,7 @@ body > footer {
   border-top: 5px solid var(--accent-color2);
 }
 
-@media only screen and (max-width: 500px) {
-  main > .content > section {
-    font-size: clamp(0.5em, 3vw, 2em);
-  }
+@media only screen and (max-width: 1000px) {
   .left {
     display: none;
   }
